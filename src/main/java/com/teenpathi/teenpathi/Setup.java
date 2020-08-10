@@ -8,7 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class Setup {
@@ -25,10 +28,5 @@ public class Setup {
     public String setupSubmit(@ModelAttribute People people, Model model) {
         model.addAttribute("people", people);
         return "startgame";
-    }
-
-    @GetMapping("/startgame")
-    public String startgame() {
-        return "start game";
     }
 }
