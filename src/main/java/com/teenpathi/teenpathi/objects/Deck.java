@@ -16,11 +16,12 @@ public class Deck {
     public void buildDeck() {
         for (Card.Suit s : Card.Suit.values()) {
             for (Card.Rank r : Card.Rank.values()) {
-                Card c = new Card(s,r);
+                Card c = new Card(s, r);
                 cards.add(c);
             }
         }
     }
+
     public void shuffle() {
         Collections.shuffle(cards);
     }

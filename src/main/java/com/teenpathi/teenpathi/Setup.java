@@ -13,13 +13,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class Setup {
 
-    Deck deck= new Deck();
+    Deck deck = new Deck();
 
     @GetMapping("/setup")
     public String setupForm(Model model) {
         model.addAttribute("people", new People());
         return "setup";
     }
+
     @PostMapping("/setup")
     public String setupSubmit(@ModelAttribute People people, Model model) {
         model.addAttribute("people", people);
@@ -27,10 +28,7 @@ public class Setup {
     }
 
     @GetMapping("/startgame")
-    public ModelAndView startgame(ModelAndView modelAndView) {
-        Card card = deck.getCards().get(0);
-        modelAndView.addObject("card", card);
-        modelAndView.setViewName("cardView");
-        return modelAndView;
+    public String startgame() {
+        return "start game";
     }
 }
