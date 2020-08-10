@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -28,5 +27,13 @@ public class Setup {
     public String setupSubmit(@ModelAttribute People people, Model model) {
         model.addAttribute("people", people);
         return "startgame";
+    }
+
+    @PostMapping("/startgame")
+    public String startgame(Model model, HttpServletRequest request) {
+        String variable1 = "Hello";
+        model.addAttribute("variable1", variable1);
+        request.setAttribute("variable2", "Value of variable2!");
+        return "start game";
     }
 }
