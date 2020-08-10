@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Result</title>
@@ -8,7 +8,9 @@
 <h1>Result</h1>
 <p th:text="${people.numPeople}"></p>
 <p th:text="${variable1}"></p>
-<p th:text="${variable2}"></p>
+<p>
+    Hello <span th:text="${variable1}">Peter</span>!!!
+</p>
 <a href="/setup">Submit another message</a>
 </body>
 </html>
