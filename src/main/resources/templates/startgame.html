@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="${people.numPeople}"> </p>
+<div th:object="${card}">
+    <td th:text="*{rank}"></td>
+    <td th:text="*{suit}"></td>
+</div>
+<a href="/setup">Submit another message</a>
+</body>
+</html>
