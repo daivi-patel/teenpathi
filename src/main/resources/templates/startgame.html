@@ -7,10 +7,12 @@
 <body>
 <h1>Result</h1>
 <p th:text="${people.numPeople}"></p>
-<p th:text="${variable1}"></p>
+<p th:text="${tester}"></p>
 <p>
-    Hello <span th:text="${variable1}">Peter</span>!!!
+    <span th:text="${tester}">s</span>
 </p>
-<a href="/setup">Submit another message</a>
+<p th:text="'Hello, ' + ${name} + '!'"></p>
+<p>AYo shaWTY WHAT THAT THANG DO</p>
+<!--<a href="/setup">Submit another message</a>-->
 </body>
 </html>
