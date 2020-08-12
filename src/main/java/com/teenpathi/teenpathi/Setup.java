@@ -27,17 +27,17 @@ public class Setup {
     public String setupSubmit(@ModelAttribute Game game, Model model, @RequestParam(name = "name", required = false, defaultValue = "World") String name) {
         model.addAttribute("game", game);
         model.addAttribute("name", name);
-        Player[] playerList = new Player[game.getNumPeople()];
+        Player[] playerList = new Player[game.getNumPeople()]; // contains all players
         int dealer = -1;
         for (int np = 0; np < game.getNumPeople(); np++) {
-            Player p = new Player(np);
-            List<Card> temp = new ArrayList<>();
-            temp.add(deck.getCards().get(++dealer));
-            temp.add(deck.getCards().get(++dealer));
-            temp.add(deck.getCards().get(++dealer));
-            p.setHand(temp);
+            Player p = new Player(np); // instantiated player
+            List<Card> temp = new ArrayList<>(); // temp hand
+            for (int i = 0; i < 3; i++) { // adds the cards in order of shuffled list
+                temp.add(deck.getCards().get(++dealer));
+            }
+            p.setHand(temp); // temp hand is set to player's hand
             System.out.println(p.getHand().toString());
-            playerList[np] = p;
+            playerList[np] = p; //player added to the list
         }
         return "startgame";
     }
