@@ -19,13 +19,8 @@ public class Setup {
     }
 
     @PostMapping("/setup")
-    public String setupSubmit(@ModelAttribute People people, Model model) {
+    public String setupSubmit(@ModelAttribute People people, Model model, @RequestParam(name="name", required=false, defaultValue="World") String name) {
         model.addAttribute("people", people);
-        return "startgame";
-    }
-
-    @GetMapping("/startgame")
-    public String startgame(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         return "startgame";
     }

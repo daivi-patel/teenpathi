@@ -14,9 +14,8 @@ public class WelcomePage {
 //    public String welcome() {
 //        return "welcome";
 //    }
-    @GetMapping("/welcome")
-    public String welcom(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
+    @GetMapping("/")
+    public String welcome(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         return "welcome";
     }
 }
