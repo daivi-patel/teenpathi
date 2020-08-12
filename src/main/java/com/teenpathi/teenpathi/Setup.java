@@ -24,7 +24,7 @@ public class Setup {
     }
 
     @PostMapping("/setup")
-    public String setupSubmit(@ModelAttribute Game game, Model model, @RequestParam(name = "name", required = false, defaultValue = "World") String name) {
+    public String setupForm(@ModelAttribute Game game, Model model, @RequestParam(name = "name", required = false, defaultValue = "World") String name) {
         model.addAttribute("game", game);
         model.addAttribute("name", name);
         Player[] playerList = new Player[game.getNumPeople()]; // contains all players
@@ -38,6 +38,9 @@ public class Setup {
             p.setHand(temp); // temp hand is set to player's hand
             System.out.println(p.getHand().toString());
             playerList[np] = p; //player added to the list
+        }
+        for (Player p: playerList) {
+            System.out.println(p.toString());
         }
         return "startgame";
     }
