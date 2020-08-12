@@ -6,7 +6,7 @@
     <title>Setup</title>
 </head>
 <body>
-<form action="#" th:action="@{/setup}" th:object="${people}" method="post">
+<form action="#" th:action="@{/setup}" th:object="${game}" method="post">
     <p>Number of Players:
         <select th:field="*{numPeople}">
             <option value="2">2</option>

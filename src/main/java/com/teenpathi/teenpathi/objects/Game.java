@@ -1,6 +1,6 @@
 package com.teenpathi.teenpathi.objects;
 
-public class People {
+public class Game {
 
     private int numPeople;
 
